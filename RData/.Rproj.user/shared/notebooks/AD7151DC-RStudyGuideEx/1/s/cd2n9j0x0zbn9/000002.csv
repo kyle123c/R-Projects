@@ -1,0 +1,9 @@
+"0","```r
+num_1 <- 33
+num_2 <- 200
+if (num_2 > num_1){
+  print(\" num_2 is greater than num_1\")
+}
+```"
+"1","[1] \" num_2 is greater than num_1\"
+"

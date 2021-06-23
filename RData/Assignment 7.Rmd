@@ -1,0 +1,47 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
+Choose 2 different datasets in R (use data() to see available datasets)
+```{r}
+data()
+data("women")
+data("swiss")
+```
+
+Choose 1 speech or document to use for a WordCloud.
+
+```{r}
+library(tm)
+library(wordcloud)
+mlktxt<-"C:\\Users\\Margaret Vieira\\Desktop\\kyleRStuff\\wordcloud"
+b<-Corpus(DirSource(mlktxt), readerControl = list(language = "eng"))
+b<-tm_map(b, tolower)
+b<-tm_map(b, stripWhitespace)
+wordcloud(d1$word,d1$freq, min.freq = 5, max.words = 20, col=rainbow(8))
+b<- tm_map(b, removeWords, stopwords("english"))
+b<- tm_map(b, removeWords, c("the","way","just","fuck","niggas"))
+b<- tm_map(b, removePunctuation)
+tdm<-TermDocumentMatrix(b)
+m1<-as.matrix(tdm)
+v1<-sort(rowSums(m1), decreasing=TRUE)
+d1<-data.frame(word = names(v1), freq=v1)
+wordcloud(d1$word,d1$freq)
+```
+```{r}
+library(rattle) 
+rattle()
+
+```

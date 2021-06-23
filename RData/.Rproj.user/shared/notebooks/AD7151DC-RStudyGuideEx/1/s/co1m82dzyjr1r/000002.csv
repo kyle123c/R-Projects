@@ -1,0 +1,18 @@
+"0","```r
+num_1 <- num_2
+num_1 <-201
+num_2 <-501
+if (num_2 > num_1) {  
+  print (\" num_2 is greater than num_1\")
+  if (num_2 >500){
+    print(\"BALLIN!\")
+  }
+} else if (num_1 == num_2) {        
+  print (\" num_1 and num_2 are equal\")
+} else{
+  print (\" num_1 is greater than num_2\")  
+  }
+```"
+"1","[1] \" num_2 is greater than num_1\"
+[1] \"BALLIN!\"
+"

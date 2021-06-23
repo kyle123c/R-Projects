@@ -1,0 +1,299 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+```{r}
+plot(cars)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
+
+
+```{r}
+num_1 <- 33
+num_2 <- 200
+if (num_2 > num_1){
+  print(" num_2 is greater than num_1")
+}
+```
+We do not have the "elif" keyword, it is replaced by using "else if"
+
+
+```{r}
+num_1 <- num_2
+num_1 <-201
+if (num_2 > num_1) {  
+  print (" num_2 is greater than num_1")
+} else if (num_1 == num_2) {        
+  print (" num_1 and num_2 are equal")
+} else{
+  print (" num_1 is greater than num_2")  
+  }
+```
+Indentation is not required in R
+
+Nested ifs
+
+```{r}
+num_1 <- num_2
+num_1 <-201
+num_2 <-501
+if (num_2 > num_1) {  
+  print (" num_2 is greater than num_1")
+  if (num_2 >500){
+    print("BALLIN!")
+  }
+} else if (num_1 == num_2) {        
+  print (" num_1 and num_2 are equal")
+} else{
+  print (" num_1 is greater than num_2")  
+  }
+```
+
+WHILE LOOPS 
+
+```{r}
+ab <- 1
+while(ab < 10){
+  print(ab)
+  ab <- ab + 1
+}
+```
+
+Breaks function the same as in Python with the same 'break' keyword'next' is used in R in place of the 'continue' keyword in Python
+
+For loops
+Function the same as in Python, but with the new bracket syntax:
+
+```{r}
+for (x in 1:100) {
+  print(x)
+}
+cars <- list("Mustang", "Stingray", "The Boss")
+for (x in cars) {
+  print(x)
+  } 
+
+```
+
+Functions/Methods
+Functions are created using the "function" keyword.
+
+```{r}
+my_name <- function(fname = "John", lname = "Doe") {
+  paste(fname, lname)
+  }
+my_name("Joey", "Joe Joe Shabadoo") 
+```
+Return results with the "return" keyword
+
+```{r}
+my_name2 <- function(fname = "John", lname = "Doe") {
+  return(paste(fname, lname))
+  }
+full_name = my_name2("Joey", "Joe Joe Shabadoo")
+print(full_name)
+```
+If you needed, global variables can be set using the following:
+tempvar <<- 778
+Note the double '<<'
+
+```{r}
+my_name <- function(fname = "John", lname = "Doe") {
+  temp_var1 <<- 1 # <<- is global!!!
+  paste(fname, lname)
+  print(temp_var1)
+  }
+my_name("Joey", "Joe Joe Shabadoo") 
+print(temp_var1)
+```
+
+To install libraries = just paste it in console
+--------------------------
+Dataframes
+
+library(readxl)
+Taxes <- read_excel("~/Downloads/Taxes.xlsx", 
+    sheet = "Sheet2")
+View(Taxes)
+
+```{r}
+print(Taxes)
+#View(Taxes)
+#edit(Taxes)
+class(Taxes) #class is type ;shows its dataframe
+```
+
+```{python}
+k=1
+print(k)
+```
+
+dataframes
+You can access elements in the DF with the following methods:
+
+```{r}
+GHCND_sample_csv[["PRCP"]][3]
+GHCND_sample_csv$PRCP[4]
+GHCND_sample_csv$PRCP[5]
+
+```
+
+Loading CSV without the GUITo load a CSV without the GUI, you can do the following:
+
+fileloc <- "C:\\Users\\lbd38\\Downloads\\GHCND_sample_csv2.csv"
+var_csv <- read.csv(fileloc)
+
+library(readr)
+GHCND_sample <- read_csv("~/Desktop/GHCND_sample.csv")
+View(GHCND_sample)
+
+```{r}
+#print(GHCND_sample)
+#edit(GHCND_sample)
+GHCND_sample[["PRCP"]][3]
+GHCND_sample$PRCP[4]
+GHCND_sample$PRCP[5]
+
+dim.data.frame(GHCND_sample) # the dimensions of the file!
+
+```
+DATA FRAME FUNCTIONS
+
+dim()
+  returns the dimensions of the DF
+
+ncol()
+  returns the number of columns in the DF 
+  
+colnames()/names()
+  returns a vector that contains all the column names
+  
+rownames()/row.names()
+  returns a vector that contains all the row names
+  
+head()
+  returns the header row and the first 6 rows of data
+  
+tail()
+  returns the header row and the last 6 rows of data
+  
+```{r}
+headernames <- names(GHCND_sample)
+headernames2 <- names(Taxes)
+print(headernames)
+print(headernames2)
+class(headernames2)
+headernames[9]
+
+head(GHCND_sample)
+tail(GHCND_sample)
+```
+  
+LISTS!
+Convert a DF vector to a list
+
+```{r}
+listx <- list(GHCND_sample$LATITUDE)
+listy <- list(GHCND_sample$PRCP)
+
+#print(listx)
+#print(listy)
+
+listy[[1]][3]
+listy[[1]][4]
+listy[[1]][5]
+```
+Plotting - scatter
+
+col is color
+
+Change the size of the points by including the 'cex = x' 
+
+attributeChange the point shape with the 'pch = x' attribute:
+
+```{r}
+plot(GHCND_sample$DATE,GHCND_sample$TMAX, col = 3, main = "Temps", xlab = "Dates", ylab = "Temps", pch = 10)
+
+points(GHCND_sample$DATE,GHCND_sample$TMIN, col = 2, pch = 7) #points connect other colors to graph
+```
+
+Plotting - line
+
+```{r}
+plot(GHCND_sample$DATE,GHCND_sample$TMAX, type = "l", col = 1, main = "Temps", xlab = "Dates", ylab = "Temps")
+
+lines(GHCND_sample$DATE,GHCND_sample$TMIN, type = "l", col = 2)
+```
+
+Bar Plots
+
+```{r}
+
+#barplot(GHCND_sample$TMAX, names.arg = GHCND_sample$DATE, col = "red", density = 15, width = c(5,4,3,1))
+
+The "horiz = TRUE" attribute can also be added if you want horizontal bars 
+
+barplot(GHCND_sample$TMAX, names.arg = GHCND_sample$DATE, col = "red", density = 15, width = c(5,4,3,1), horiz = TRUE)
+
+```
+
+Pie charts
+
+```{r}
+
+x <- c(10,20,30,40)
+
+mylabel <- c("Fighting Games", "FPS", "MMO", "RPGs")  # TYPICALLY u would pull these values out of a data frame.
+
+colors <- c("blue", "yellow", "purple", "red")
+
+pie(x, label = mylabel, main = "Game Distribution", col = colors)
+
+legend("bottomright", mylabel, fill = colors)
+
+```
+Statistics with DataFrames and R
+
+The summary() function provides a very quick way of obtaining statistical information about the dataset in the DF.
+
+Summary returns the following information for each variable:
+
+Min - can also use min() function 
+
+min(GHCND_sample_csv2$TMAX) •Can be verified with the which.min() function, which returns the index position of the min value.•which.min(GHCND_sample_csv2$TMAX)
+
+First quantile – the value that cuts off the first 25% of dataMedian - can also use the median() function
+
+ median(GHCND_sample_csv2$TMAX)
+
+Mean – can also use the mean() function
+ mean(GHCND_sample_csv2$TMAX) 
+
+Third quantile – the value that cuts off the first 75% of data•use the quantile() function to get the other quartiles.•quantile(GHCND_sample_csv2$TMIN, c(0.50))
+
+Max – can be verified with the which.max() function , which returns the index position of the max value.•The same functions as MIN apply for MAX.
+```{r}
+
+#summary(GHCND_sample)
+quantile(GHCND_sample$TMIN)
+quantile(GHCND_sample$TMIN, c(0.50))
+
+```
+
+```{r}
+
+library(MASS)
+data()
+```
+

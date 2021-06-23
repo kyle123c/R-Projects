@@ -1,0 +1,7 @@
+"0","```r
+# it list all the datasets
+ls()
+```"
+"1"," [1] \"a\"         \"ab\"        \"b\"         \"cars\"      \"full_name\" \"my_name\"   \"my_name2\"  \"my_str\"   
+ [9] \"my_str2\"   \"num_1\"     \"num_2\"     \"temp_var1\" \"w\"         \"x\"         \"y\"        
+"

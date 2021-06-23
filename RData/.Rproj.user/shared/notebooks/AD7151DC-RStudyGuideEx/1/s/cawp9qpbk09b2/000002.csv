@@ -1,0 +1,42 @@
+"0","```r
+\"Hello World\"
+```"
+"1","[1] \"Hello World\"
+"
+"0","```r
+print('Hello World')
+```"
+"1","[1] \"Hello World\"
+"
+"0","```r
+#if these both run? yes
+
+print(5+5)
+```"
+"1","[1] 10
+"
+"0","```r
+#if these both run? yes
+
+x <- \"R is the best!\"
+y<-77
+# note: <- is pretty much \" = \" from python
+print(y)
+```"
+"1","[1] 77
+"
+"0","```r
+print(x)
+```"
+"1","[1] \"R is the best!\"
+"
+"0","```r
+class(x)
+```"
+"1","[1] \"character\"
+"
+"0","```r
+class(y)
+```"
+"1","[1] \"numeric\"
+"

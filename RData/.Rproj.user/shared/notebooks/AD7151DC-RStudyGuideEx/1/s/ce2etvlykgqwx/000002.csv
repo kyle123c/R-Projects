@@ -1,0 +1,4 @@
+"0","```r
+View(Titanic)
+#titanic_sub1 <- subset(Titanic, Sex == \"Male\") not working....
+```"
