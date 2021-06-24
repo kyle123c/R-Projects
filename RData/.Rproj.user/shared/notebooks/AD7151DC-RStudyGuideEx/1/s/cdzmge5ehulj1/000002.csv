@@ -1,5 +1,0 @@
-"0","```r
-library(gdata)
-rename.vars(mtcar_sub, c('mpg','wt'), c('mpg_new','wt_new'))
-
-```"

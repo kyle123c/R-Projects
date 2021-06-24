@@ -1,5 +1,0 @@
-"0","```r
-summary((wtloss))
-```"
-"1","Error in summary((wtloss)) : object 'wtloss' not found
-"

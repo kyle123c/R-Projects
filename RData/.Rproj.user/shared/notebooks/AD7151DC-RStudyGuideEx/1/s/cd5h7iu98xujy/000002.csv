@@ -1,6 +1,0 @@
-"0","```r
-```r
-mtcar_sub2<-subset(mtcars, mpg > 20)
-
-```
-```"

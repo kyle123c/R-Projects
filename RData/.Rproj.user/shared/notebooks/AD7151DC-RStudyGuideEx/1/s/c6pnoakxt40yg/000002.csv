@@ -1,5 +1,0 @@
-"0","```r
-data(mtcars)
-htmap <-as.matrix(mtcars)
-heatmap(htmap, col=terrain.colors(256))
-```"

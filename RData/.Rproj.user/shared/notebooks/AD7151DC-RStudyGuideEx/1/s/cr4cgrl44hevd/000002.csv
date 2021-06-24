@@ -1,6 +1,0 @@
-"0","```r
-library(hexbin)
-myhexb<-hexbin(iris$Petal.Length, iris$Sepal.Length, xbins=30)
-plot(myhexb)
-View(iris)
-```"

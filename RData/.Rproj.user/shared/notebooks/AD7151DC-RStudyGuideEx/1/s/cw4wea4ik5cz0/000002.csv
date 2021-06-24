@@ -1,9 +1,0 @@
-"0","```r
-my_name2 <- function(fname = \"John\", lname = \"Doe\") {
-  return(paste(fname, lname))
-  }
-full_name = my_name2(\"Joey\", \"Joe Joe Shabadoo\")
-print(full_name)
-```"
-"1","[1] \"Joey Joe Joe Shabadoo\"
-"

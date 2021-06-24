@@ -1,4 +1,0 @@
-"0","```r
-mtcar_sub<- subset(mtcars, select = c(mpg,wt,hp))
-#this being able the extract only these values from the data sheet
-```"

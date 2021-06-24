@@ -1,4 +1,0 @@
-"0","```r
-difftime(newtime, Sys.Date(), units = 'weeks')
-
-```"

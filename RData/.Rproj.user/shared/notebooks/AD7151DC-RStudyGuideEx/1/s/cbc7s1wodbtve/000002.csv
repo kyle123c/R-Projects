@@ -1,5 +1,0 @@
-"0","```r
-mtcar_sub2_sorted <- mtcar_sub2[order(mtcar_sub2$mpg, - mtcar_sub2$wt), ] # the - makes descending order
-
-#mtcar_sub2_sorted <- mtcar_sub2[order(mtcar_sub2$mpg, mtcar_sub2$wt), ] Ascending order 
-```"
