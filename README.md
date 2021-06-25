@@ -14,7 +14,7 @@ Assignment6- showcasing data analytical tools such as dataframes, ggplot,ggplot2
 
 Assignment7 - Wordcloud project
 
-<img width="769" alt="wordcloud" src="https://user-images.githubusercontent.com/26921505/123338877-8955d580-d517-11eb-9475-887efe000495.PNG">
+<img width="959" alt="wordcloud" src="https://user-images.githubusercontent.com/26921505/123474810-87981a80-d5c8-11eb-9cec-3f6f56a1e56f.PNG">
 
 R-StudyGuide - A series of different exercise showcase of DataFrame demonstrations such as Rcdmr, mosaicplot, Hexbin, 
 
